@@ -1,9 +1,9 @@
 /*
      X-Frame-Options: DENY
      X-XSS-Protection: 1; mode=block
+     X-Content-Type-Options: nosniff
      Referrer-Policy: no-referrer
      Content-Security-Policy: default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self' 'unsafe-inline';
-     Strict-Transport-Security: max-age=63072000; includeSubDomains; preloadgiX-Content-Type-Options: nosniff
      Permissions-Policy: geolocation=(), microphone=(), camera=()
      Cross-Origin-Embedder-Policy: require-corp
      Cross-Origin-Opener-Policy: same-origin
