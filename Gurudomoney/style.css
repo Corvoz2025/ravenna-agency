@@ -1,0 +1,750 @@
+/* RESET GERAL */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #fff8f0;
+  color: #000;
+}
+
+h1, h2 {
+  color: #ff6600;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* SELO RAVENNA (canto superior esquerdo) */
+.selo-ravenna {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.selo-ravenna:hover {
+  transform: scale(1.05);
+}
+.selo-ravenna img {
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* HERO SECTION */
+.hero {
+  background: #ffeedd;
+  padding: 60px 20px;
+}
+.hero .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  margin: auto;
+  gap: 40px;
+}
+.hero .text {
+  flex: 1;
+  min-width: 300px;
+}
+.hero .text h1 {
+  font-size: 36px;
+}
+.hero .text p {
+  font-size: 18px;
+  margin: 20px 0;
+}
+.hero .image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+.hero .image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* SECTIONS GERAIS */
+.section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+.section.alt {
+  background: #ffeedd;
+}
+
+/* LISTAS */
+ul {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+}
+ul li {
+  margin-bottom: 10px;
+}
+
+/* LISTA COM ÍCONES */
+.lista-com-imagens li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.lista-com-imagens li img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* DEPOIMENTOS */
+.depoimento {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 30px auto;
+  max-width: 700px;
+}
+.depoimento img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
+.depoimento .texto {
+  flex: 1;
+}
+.depoimento .texto p {
+  font-style: italic;
+  margin: 0 0 6px;
+  color: #333;
+}
+.depoimento .texto strong {
+  font-size: 14px;
+  color: #444;
+}
+
+/* FAQ */
+details summary {
+  font-weight: bold;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+/* NOTIFICAÇÃO DE COMPRA (FOMO) */
+.compra-fake {
+  position: fixed;
+  top: 60px;
+  left: 15px;
+  background: rgba(255,255,255,0.95);
+  color: #333;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 0 0 8px 8px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* AVALIAÇÕES ESTRELAS */
+.avaliacao-estrelas {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 35px;
+  font-family: Arial, sans-serif;
+}
+.estrelas-base {
+  position: relative;
+  display: inline-block;
+  color: #ccc;
+}
+.estrelas-base::before {
+  content: "★★★★★";
+}
+.estrelas-preenchidas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ffd700;
+  white-space: nowrap;
+  overflow: hidden;
+  pointer-events: none;
+}
+.nota {
+  font-size: 14px;
+  color: #444;
+}
+
+/* BOTÃO FLUTUANTE */
+.btn-download-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+.btn-flutuante {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #ff6600;
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  max-width: calc(100% - 20px);
+}
+.btn-flutuante .desconto {
+  background: #fff;
+  color: #ff6600;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+.timer-no-botao {
+  font-size: 14px;
+  background: rgba(0,0,0,0.2);
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.btn-flutuante .preco-destaque {
+  background-color: #ffffff;
+  color: #ff6600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.btn-flutuante .preco-riscado {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;    /* deixa o traço mais grosso */
+  color: rgba(255,255,255,0.8);     /* um branco suave para contraste */
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+/* RODAPÉ */
+.rodape-ravenna {
+  background: #111;
+  color: #eee;
+  padding: 60px 20px;
+  font-size: 14px;
+  text-align: center;
+  min-height: 180px;
+}
+.container-rodape {
+  max-width: 800px;
+  margin: auto;
+}
+.rodape-ravenna .slogan {
+  font-style: italic;
+  color: #ccc;
+  margin: 10px 0;
+}
+.rodape-ravenna .legais {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .hero .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .depoimento {
+    flex-direction: column;
+    text-align: center;
+  }
+  .depoimento img {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 480px) {
+  /* Ícones */
+  .lista-com-imagens li img {
+    width: 36px;
+    height: 36px;
+  }
+  /* Botão flutuante */
+  .btn-flutuante {
+    padding: 10px 20px;
+    font-size: 14px;
+    gap: 8px;
+    max-width: calc(100% - 20px);
+  }
+  .timer-no-botao {
+    font-size: 12px;
+    padding: 2px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-flutuante {
+    display: inline-flex;
+    flex-direction: column;    /* empilha em duas linhas */
+    align-items: center;
+    gap: 4px;                  /* espaço entre linha1 e linha2 */
+    padding: 8px 12px;         /* botão mais compacto */
+    font-size: 14px;
+    box-sizing: border-box;
+    max-width: calc(100% - 20px);
+  }
+  .btn-flutuante .linha1 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .btn-flutuante .linha2 {
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .btn-download-container {
+    position: fixed;
+    right: 8px;
+    bottom: 8px;
+    z-index: 9999;
+  }
+}
+/* logo dentro do rodapé */
+.logo-footer {
+  display: block;
+  width: 60px;        /* ajuste conforme o design */
+  height: auto;
+  margin: 0 auto 16px;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .carousel-item .texto strong {
+    font-size: 14px;
+  }
+  .carousel-item .texto p {
+    font-size: 13px;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .carousel-item .texto strong {
+    font-size: 14px;
+  }
+  .carousel-item .texto p {
+    font-size: 13px;
+  }
+  .carousel-nav {
+    font-size: 20px;
+    padding: 2px 8px;
+  }
+}
+
+/* === CARROSSEL DE DEPOIMENTOS === */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.carousel-item {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-item.active {
+  display: block;
+}
+
+.carousel-item img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  margin: 0 auto 16px;
+  display: block;
+}
+
+.carousel-item .texto strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.carousel-item .texto p {
+  font-style: italic;
+  color: #333;
+}
+
+/* Container do botão + timer */
+.btn-download-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  z-index: 9999;
+}
+
+/* Botão principal */
+.btn-flutuante {
+  display: inline-block;
+  background: #ff6600;
+  color: #fff;
+  text-decoration: none;
+  padding: 16px 24px;            /* padding generoso */
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+  font-family: sans-serif;       /* sem serifa */
+}
+
+/* Hover com leve escala */
+.btn-flutuante:hover {
+  transform: scale(1.05);
+}
+
+/* Linha 1: CTA grande */
+.btn-flutuante .linha1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Linha 2: preço e riscado */
+.btn-flutuante .linha2 {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.btn-flutuante .preco-destaque {
+  font-size: 32px;
+  font-weight: bold;
+}
+.btn-flutuante .preco-riscado {
+  font-size: 18px;
+  color: rgba(255,255,255,0.8);
+  text-decoration: line-through;
+}
+
+/* Timer abaixo do botão */
+.timer-baixo {
+  margin-top: 8px;
+  font-size: 20px;
+  color: #333;
+}
+
+/* Responsivo: ajuste de margens no mobile */
+@media (max-width: 480px) {
+  .btn-download-wrapper {
+    right: 10px;
+    bottom: 10px;
+  }
+  .btn-flutuante {
+    padding: 12px 16px;
+  }
+  .btn-flutuante .linha1 {
+    font-size: 16px;
+  }
+  .btn-flutuante .linha2 .preco-destaque {
+    font-size: 16px;
+  }
+  .btn-flutuante .linha2 .preco-riscado {
+    font-size: 12px;
+  }
+  .timer-baixo {
+    font-size: 18px;
+  }
+}
+
+/* ————— Efeito geral de blur nas seções ————— */
+.section,
+.section.alt {
+  filter: blur(4px);
+  transform: scale(1);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  transform-origin: center center;
+}
+
+/* ————— Seção ativa: sem blur e levemente ampliada ————— */
+.section.active,
+.section.alt.active {
+  filter: none;
+  transform: scale(1.05);
+  position: relative;
+  z-index: 1;
+}
+
+/* ————— UI fixa (botão + selo) ————— */
+.btn-download-wrapper,
+.selo-ravenna {
+  transition: filter 0.3s ease;
+}
+
+/* classe que aplica blur ao UI */
+.ui--blur {
+  filter: blur(4px) !important;
+}
+
+/* ————— Estilos básicos do selo Ravenna ————— */
+.selo-ravenna {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  /* ajuste de tamanho à sua vontade */
+}
+.selo-ravenna img {
+  width: 40px;
+  height: auto;
+}
+
+/* ————— Botão flutuante ————— */
+.btn-download-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  z-index: 1000;
+}
+.btn-flutuante {
+  display: inline-block;
+  background: #ff6600;
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-family: sans-serif;
+  transition: transform 0.2s ease;
+}
+.btn-flutuante:hover {
+  transform: scale(1.05);
+}
+.btn-flutuante .linha1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.btn-flutuante .linha2 {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.btn-flutuante .preco-destaque {
+  font-size: 32px;
+  font-weight: bold;
+}
+.btn-flutuante .preco-riscado {
+  font-size: 18px;
+  color: rgba(255,255,255,0.8);
+  text-decoration: line-through;
+}
+.timer-baixo {
+  margin-top: 8px;
+  font-size: 20px;
+  color: #333;
+}
+
+/* ————— Responsivo ————— */
+@media (max-width: 480px) {
+  .btn-download-wrapper {
+    right: 10px;
+    bottom: 10px;
+  }
+  .btn-flutuante {
+    padding: 12px 16px;
+  }
+  .btn-flutuante .linha1 {
+    font-size: 20px;
+  }
+  .btn-flutuante .preco-destaque {
+    font-size: 28px;
+  }
+  .btn-flutuante .preco-riscado {
+    font-size: 16px;
+  }
+  .timer-baixo {
+    font-size: 18px;
+  }
+}
+
+/* ===== COVERFLOW 3D (roleta) ===== */
+.coverflow {
+  position: relative;
+  perspective: 1200px;
+  max-width: 800px;
+  margin: 40px auto;
+}
+.coverflow__inner {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+.coverflow__item {
+  position: absolute;
+  top: 0; left: 50%;
+  width: 240px;
+  margin-left: -120px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 20px;
+  backface-visibility: hidden;
+}
+.coverflow__item img {
+  width: 64px; height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+.coverflow__item .texto strong {
+  display: block; margin-bottom: 8px; color: #444;
+}
+.coverflow__item .texto p {
+  font-style: italic; color: #333;
+}
+.coverflow-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none; font-size: 32px; padding: 6px 14px;
+  cursor: pointer; border-radius: 4px; color: #ff6600;
+  z-index: 10; transition: background 0.3s;
+}
+.coverflow-nav:hover { background: rgba(255,255,255,1); }
+.coverflow-nav.prev { left: -40px; }
+.coverflow-nav.next { right: -40px; }
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .coverflow__item { width: 180px; margin-left: -90px; padding: 16px; }
+  .coverflow-nav { font-size: 24px; padding: 4px 10px; }
+}
+
+/* ——— Reserva espaço para o carrossel de depoimentos ——— */
+.section.alt .coverflow {
+  /* Ajuste esse valor conforme a altura total dos seus depoimentos */
+  min-height: 300px;
+}
+
+/* ——— Navegação do carrossel de depoimentos ——— */
+.coverflow {
+  position: relative; /* garante contexto para .coverflow-nav-container */
+}
+
+.coverflow-nav-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none; /* só os botões recebem eventos */
+  z-index: 2;
+}
+
+.coverflow-nav-container button {
+  pointer-events: auto;
+  background: rgba(255,255,255,0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  color: #ff6600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.coverflow-nav-container button:hover {
+  background: rgba(255,255,255,1);
+  transform: scale(1.1);
+}
+
+/* ——— Banner de Cookies Centralizado com Blur no Fundo ——— */
+body.blurred > :not(#cookie-banner) {
+  filter: blur(4px);
+  pointer-events: none; /* evita clique no conteúdo enquanto o banner estiver ativo */
+  user-select: none;
+  transition: filter 0.3s ease;
+}
+
+#cookie-banner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px 30px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  text-align: center;
+  z-index: 10000;
+  border-radius: 8px;
+  max-width: 90%;
+}
+
+#cookie-banner p {
+  margin: 0 0 12px;
+  color: #333;
+}
+
+#cookie-banner .cookie-btn {
+  background: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ——— Botão de Mute no canto superior direito ——— */
+#mute-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10001; /* acima do banner e selo */
+  pointer-events: auto;
+}
+
+/* Garantir que o botão de mute NUNCA seja desfocado */
+body.blurred > :not(#cookie-banner):not(#mute-btn) {
+  filter: blur(4px);
+}
