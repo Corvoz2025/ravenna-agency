@@ -1,12 +1,13 @@
 /* RESET GERAL */
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background: #fff8f0;
   color: #000;
 }
 
-h1, h2 {
+h1,
+h2 {
   color: #ff6600;
   text-align: center;
 }
@@ -25,7 +26,7 @@ a {
   background: #fff;
   padding: 6px 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 .selo-ravenna:hover {
@@ -70,7 +71,7 @@ a {
 .hero .image img {
   max-width: 100%;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 /* SECTIONS GERAIS */
@@ -119,7 +120,7 @@ ul li {
   height: 64px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
 }
 .depoimento .texto {
@@ -147,14 +148,14 @@ details summary {
   position: fixed;
   top: 60px;
   left: 15px;
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.95);
   color: #333;
   padding: 8px 16px;
   font-size: 14px;
   font-weight: 500;
   border-radius: 0 0 8px 8px;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -209,7 +210,7 @@ details summary {
   font-weight: bold;
   font-size: 16px;
   text-decoration: none;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -225,7 +226,7 @@ details summary {
 }
 .timer-no-botao {
   font-size: 14px;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   padding: 4px 8px;
   border-radius: 6px;
   color: #fff;
@@ -243,8 +244,8 @@ details summary {
 
 .btn-flutuante .preco-riscado {
   text-decoration: line-through;
-  text-decoration-thickness: 2px;    /* deixa o traço mais grosso */
-  color: rgba(255,255,255,0.8);     /* um branco suave para contraste */
+  text-decoration-thickness: 2px; /* deixa o traço mais grosso */
+  color: rgba(255, 255, 255, 0.8); /* um branco suave para contraste */
   font-size: 14px;
   margin-right: 8px;
 }
@@ -312,10 +313,10 @@ details summary {
 @media (max-width: 480px) {
   .btn-flutuante {
     display: inline-flex;
-    flex-direction: column;    /* empilha em duas linhas */
+    flex-direction: column; /* empilha em duas linhas */
     align-items: center;
-    gap: 4px;                  /* espaço entre linha1 e linha2 */
-    padding: 8px 12px;         /* botão mais compacto */
+    gap: 4px; /* espaço entre linha1 e linha2 */
+    padding: 8px 12px; /* botão mais compacto */
     font-size: 14px;
     box-sizing: border-box;
     max-width: calc(100% - 20px);
@@ -340,7 +341,7 @@ details summary {
 /* logo dentro do rodapé */
 .logo-footer {
   display: block;
-  width: 60px;        /* ajuste conforme o design */
+  width: 60px; /* ajuste conforme o design */
   height: auto;
   margin: 0 auto 16px;
 }
@@ -394,7 +395,7 @@ details summary {
   height: 64px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
   margin: 0 auto 16px;
   display: block;
 }
@@ -425,10 +426,10 @@ details summary {
   background: #ff6600;
   color: #fff;
   text-decoration: none;
-  padding: 16px 24px;            /* padding generoso */
+  padding: 16px 24px; /* padding generoso */
   border-radius: 8px;
   transition: transform 0.2s ease;
-  font-family: sans-serif;       /* sem serifa */
+  font-family: sans-serif; /* sem serifa */
 }
 
 /* Hover com leve escala */
@@ -455,7 +456,7 @@ details summary {
 }
 .btn-flutuante .preco-riscado {
   font-size: 18px;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: line-through;
 }
 
@@ -567,7 +568,7 @@ details summary {
 }
 .btn-flutuante .preco-riscado {
   font-size: 18px;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: line-through;
 }
 .timer-baixo {
@@ -600,98 +601,82 @@ details summary {
 }
 
 /* ===== COVERFLOW 3D (roleta) ===== */
-.coverflow {
-  position: relative;
-  perspective: 1200px;
-  max-width: 800px;
-  margin: 40px auto;
-}
-.coverflow__inner {
-  position: relative;
-  width: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.8s ease;
-}
-.coverflow__item {
-  position: absolute;
-  top: 0; left: 50%;
-  width: 240px;
-  margin-left: -120px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+/* --- Container geral --- */
+.slider {
+  max-width: 600px;
+  margin: 2rem auto;
   text-align: center;
-  padding: 20px;
-  backface-visibility: hidden;
 }
-.coverflow__item img {
-  width: 64px; height: 64px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 12px;
-}
-.coverflow__item .texto strong {
-  display: block; margin-bottom: 8px; color: #444;
-}
-.coverflow__item .texto p {
-  font-style: italic; color: #333;
-}
-.coverflow-nav {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  background: rgba(255,255,255,0.8);
-  border: none; font-size: 32px; padding: 6px 14px;
-  cursor: pointer; border-radius: 4px; color: #ff6600;
-  z-index: 10; transition: background 0.3s;
-}
-.coverflow-nav:hover { background: rgba(255,255,255,1); }
-.coverflow-nav.prev { left: -40px; }
-.coverflow-nav.next { right: -40px; }
-
-/* Responsivo */
-@media (max-width: 600px) {
-  .coverflow__item { width: 180px; margin-left: -90px; padding: 16px; }
-  .coverflow-nav { font-size: 24px; padding: 4px 10px; }
+.slider h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
 }
 
-/* ——— Reserva espaço para o carrossel de depoimentos ——— */
-.section.alt .coverflow {
-  /* Ajuste esse valor conforme a altura total dos seus depoimentos */
-  min-height: 300px;
+/* --- Janela do slider --- */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  height: 320px; /* ajuste à sua necessidade */
 }
 
-/* ——— Navegação do carrossel de depoimentos ——— */
-.coverflow {
-  position: relative; /* garante contexto para .coverflow-nav-container */
-}
-
-.coverflow-nav-container {
+/* --- Cada depoimento --- */
+.slider-item {
   position: absolute;
-  top: 50%;
-  left: 0;
+  top: 0;
+  left: 100%;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-  pointer-events: none; /* só os botões recebem eventos */
-  z-index: 2;
+  opacity: 0;
+  transition: all 0.5s ease;
 }
 
-.coverflow-nav-container button {
-  pointer-events: auto;
-  background: rgba(255,255,255,0.8);
+/* Depoimento visível */
+.slider-item.active {
+  left: 0;
+  opacity: 1;
+}
+
+/* Foto quadrada acima */
+.testimonial-image {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.testimonial-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Texto do depoimento */
+.testimonial-earning {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.testimonial-name {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+.testimonial-text {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  padding: 0 1rem;
+}
+
+/* Botões de navegação */
+.slider-nav {
+  background: #ff7a00;
+  color: #fff;
   border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 24px;
-  color: #ff6600;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0.5rem 0;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  border-radius: 4px;
 }
-
-.coverflow-nav-container button:hover {
-  background: rgba(255,255,255,1);
-  transform: scale(1.1);
+.slider-nav:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
 /* ——— Banner de Cookies Centralizado com Blur no Fundo ——— */
@@ -709,7 +694,7 @@ body.blurred > :not(#cookie-banner) {
   transform: translate(-50%, -50%);
   background: #fff;
   padding: 20px 30px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   text-align: center;
   z-index: 10000;
   border-radius: 8px;

@@ -1,331 +1,221 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GURU DO MONEY</title>
-  <meta name="description" content="Descubra como aumentar sua renda mesmo em tempos de crise com o e-book 'GURU DO MONEY'. Estratégias reais e linguagem simples." />
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- Botão Mute BG-Music -->
-  <button id="mute-btn" aria-label="Mudo/Não mudo música">🔊</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GURU DO MONEY</title>
+    <meta
+      name="description"
+      content="Descubra como aumentar sua renda mesmo em tempos de crise com o e-book 'GURU DO MONEY'. Estratégias reais e linguagem simples."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Botão Mute BG-Music -->
+    <button id="mute-btn" aria-label="Mudo/Não mudo música">🔊</button>
 
-  <!-- Cookie Consent Banner -->
-  <div id="cookie-banner" class="cookie-banner">
-    <p>Usamos cookies para melhorar sua experiência na página.</p>
-    <button id="accept-cookies" class="cookie-btn">Aceitar cookies</button>
-  </div>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+      <p>Usamos cookies para melhorar sua experiência na página.</p>
+      <button id="accept-cookies" class="cookie-btn">Aceitar cookies</button>
+    </div>
 
-  <!-- Áudios -->
-  <audio id="bg-music"       src="bg-music.mp3"   loop preload="auto"></audio>
-  <audio id="tick-sound"     src="tick.mp3"       preload="auto"></audio>
-  <audio id="section-sound"  src="section.mp3"    preload="auto"></audio>
+    <!-- Áudios -->
+    <audio id="bg-music" src="bg-music.mp3" loop preload="auto"></audio>
+    <audio id="tick-sound" src="tick.mp3" preload="auto"></audio>
+    <audio id="section-sound" src="section.mp3" preload="auto"></audio>
 
-  <!-- Notificação de compra -->
-  <div class="compra-fake" id="notificacaoCompra">
-    🔔 Alguém acabou de baixar o e-book!
-  </div>
+    <!-- Notificação de compra -->
+    <div class="compra-fake" id="notificacaoCompra">
+      🔔 Alguém acabou de baixar o e-book!
+    </div>
 
-  <!-- Selo Ravenna Agency fixo -->
-  <a href="https://ravenna.agency" class="selo-ravenna" target="_blank">
-    <img src="RavennaPreto.png" alt="Logo Ravenna Agency">
-  </a>
+    <!-- Selo Ravenna Agency fixo -->
+    <a href="https://ravenna.agency" class="selo-ravenna" target="_blank">
+      <img src="RavennaPreto.png" alt="Logo Ravenna Agency" />
+    </a>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="text">
-        <h1>Recupere seu poder de compra em 7 dias</h1>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="text">
+          <h1>Recupere seu poder de compra em 7 dias</h1>
+          <p>
+            O carrinho de compras do <strong>brasileiro</strong> está diminuindo
+            a cada dia. O sofrimento com as contas só aumenta. Esse e-book é
+            para você. Aqui está o segredo que os ricos estão usando para manter
+            seus carros de luxo e restaurantes caros — adaptado a
+            <strong>VOCÊ, BRASILEIRO COMUM</strong>.
+          </p>
+        </div>
+        <div class="image">
+          <img
+            src="ebook.webp"
+            alt="Capa do e-book Guru do Money com fundo laranja"
+          />
+          <div class="avaliacao-estrelas">
+            <div class="estrelas-base">
+              <div class="estrelas-preenchidas" style="width: 86%">
+                ★★★★★ 57 avaliações
+              </div>
+            </div>
+            <span class="nota">4.3 / 5 57 avaliações</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O que você vai aprender -->
+    <section class="section">
+      <h2>O que você vai aprender</h2>
+      <ul class="lista-com-imagens">
+        <li>
+          <img src="imagens0.png" alt="Ícone: Pensar como rico" /> Pensar como
+          rico mesmo ganhando pouco
+        </li>
+        <li>
+          <img src="imagens1.png" alt="Ícone: Renda extra" /> Estratégias reais
+          de renda extra
+        </li>
+        <li>
+          <img src="imagens2.png" alt="Ícone: Inflação" /> Como fugir da
+          inflação e proteger seu dinheiro
+        </li>
+        <li>
+          <img src="imagens3.png" alt="Ícone: Administra" /> Como administrar,
+          investir e acompanhar seus resultados
+        </li>
+        <li>
+          <img src="imagens4.png" alt="Ícone: Gráficos" /> Entender tudo com
+          gráficos simples e diretos
+        </li>
+      </ul>
+    </section>
+
+    <!-- Depoimentos Reais -->
+    <section id="testimonials-slider" class="slider">
+      <h2>Depoimentos reais</h2>
+      <div class="slider-container">
+        <!-- Item 1 -->
+        <div class="slider-item active">
+          <div class="testimonial-image">
+            <img src="joaopaulo.png" alt="Foto do João Silva" />
+          </div>
+          <p class="testimonial-earning">Ganhou R$ 2.500 em 7 dias</p>
+          <p class="testimonial-name">João Paulo, São Paulo</p>
+          <p class="testimonial-text">
+            “Eu não acreditava que era possível, mas em uma semana já tinha
+            recuperado o investimento e dobrado meu lucro!”
+          </p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="slider-item">
+          <div class="testimonial-image">
+            <img src="imgs/maria.jpg" alt="Foto da Maria Oliveira" />
+          </div>
+          <p class="testimonial-earning">Ganhou R$ 1.800 em 5 dias</p>
+          <p class="testimonial-name">Maria Oliveira, Belo Horizonte</p>
+          <p class="testimonial-text">
+            “O método é simples, direto ao ponto. Em menos de uma semana já vi
+            resultados incríveis.”
+          </p>
+        </div>
+
+        <!-- Adicione quantos depoimentos quiser seguindo o mesmo padrão -->
+      </div>
+
+      <button class="slider-nav prev">‹ Anterior</button>
+      <button class="slider-nav next">Próximo ›</button>
+    </section>
+
+    <!-- Por que este e-book é diferente? -->
+    <section class="section">
+      <h2>Por que este e-book é diferente?</h2>
+      <p>
+        Não é só um e-book... É um manual de guerra econômica para brasileiros
+        reais que foram privados de educação financeira. Entenda o que os ricos
+        já sabem — com linguagem simples e direta.
+      </p>
+    </section>
+
+    <!-- Para quem é -->
+    <section class="section alt">
+      <h2>Porque esse e-book é para você</h2>
+      <ul>
+        <li>✔ Se você é um empreendedor, mas não sabe por onde começar</li>
+        <li>✔ Já cansou de ficar com as contas zeradas</li>
+        <li>✔ Quer mudar de vida com o que tem</li>
+        <li>✔ Tem vontade de investir, mas não sabe por onde</li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section alt">
+      <h2>Perguntas Frequentes</h2>
+      <details>
+        <summary>Este e-book serve mesmo pra quem ganha pouco?</summary>
         <p>
-          O carrinho de compras do <strong>brasileiro</strong> está diminuindo a cada dia. 
-          O sofrimento com as contas só aumenta. Esse e-book é para você. Aqui está o segredo 
-          que os ricos estão usando para manter seus carros de luxo e restaurantes caros — 
-          adaptado a <strong>VOCÊ, BRASILEIRO COMUM</strong>.
+          Sim! Foi feito especialmente para quem vive com o orçamento apertado.
+        </p>
+      </details>
+      <details>
+        <summary>Preciso investir dinheiro para aplicar o conteúdo?</summary>
+        <p>Não. As estratégias são pensadas para começar do zero.</p>
+      </details>
+      <details>
+        <summary>A linguagem é difícil?</summary>
+        <p>Não! É tudo explicado em linguagem simples, prática e aplicável.</p>
+      </details>
+      <details>
+        <summary>Funciona em celular?</summary>
+        <p>Sim! Pode ser lido em qualquer dispositivo.</p>
+      </details>
+      <details>
+        <summary>Como baixo?</summary>
+        <p>Você será direcionado para a página de download após o pagamento.</p>
+      </details>
+    </section>
+
+    <!-- Botão Flutuante com Timer -->
+    <div class="btn-download-wrapper">
+      <a href="como-ter-dinheiro.pdf" download class="btn-flutuante">
+        <div class="linha1">Mudar de vida agora</div>
+        <div class="linha2">
+          <span class="preco-destaque">R$23,97</span>
+          <span class="preco-riscado">R$47,94</span>
+        </div>
+      </a>
+      <div class="timer-baixo">
+        Oferta termina em: ⏰ <span id="timer">03:47</span>
+      </div>
+    </div>
+
+    <!-- Rodapé Institucional -->
+    <footer class="rodape-ravenna" id="rodape">
+      <div class="container-rodape">
+        <img
+          src="RavennaBranco.png"
+          alt="Logo Ravenna Agency"
+          class="logo-footer"
+        />
+        <p>
+          <strong>Produzido por Ravenna Agency</strong> — a agência para
+          microempresas
+        </p>
+        <p class="slogan">
+          Seu tempo e o seu faturamento são nossas prioridades.
+        </p>
+        <p class="legais">
+          Todos os direitos reservados © 2025. 💬 WhatsApp (31) 98628-1133 —
+          exclusivo para dúvidas sobre o conteúdo deste e-book.
         </p>
       </div>
-      <div class="image">
-        <img src="ebook.webp" alt="Capa do e-book Guru do Money com fundo laranja">
-        <div class="avaliacao-estrelas">
-          <div class="estrelas-base">
-            <div class="estrelas-preenchidas" style="width: 86%;">★★★★★ "(57 avaliações)"</div>
-          </div>
-          <span class="nota">4.3 / 5</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- O que você vai aprender -->
-  <section class="section">
-    <h2>O que você vai aprender</h2>
-    <ul class="lista-com-imagens">
-      <li><img src="imagens0.png" alt="Ícone: Pensar como rico"> Pensar como rico mesmo ganhando pouco</li>
-      <li><img src="imagens1.png" alt="Ícone: Renda extra"> Estratégias reais de renda extra</li>
-      <li><img src="imagens2.png" alt="Ícone: Inflação"> Como fugir da inflação e proteger seu dinheiro</li>
-      <li><img src="imagens3.png" alt="Ícone: Administra"> Como administrar, investir e acompanhar seus resultados</li>
-      <li><img src="imagens4.png" alt="Ícone: Gráficos"> Entender tudo com gráficos simples e diretos</li>
-    </ul>
-  </section>
-
-  <!-- Depoimentos Reais -->
-  <section class="section alt">
-    <h2>Depoimentos Reais</h2>
-    <div class="coverflow">
-      <div class="coverflow__inner" id="coverflow-inner">
-        <div class="coverflow__item">
-          <img src="juliana.png" alt="Juliana">
-          <div class="texto">
-            <strong>— Juliana, 31 anos • Recepcionista - Resultado em 24 dias: +R$750,00</strong>
-            <p>“Nunca imaginei que um conteúdo tão acessível mudaria tanto minha vida.”</p>
-          </div>
-        </div>
-        <div class="coverflow__item">
-          <img src="carlos.png" alt="Carlos">
-          <div class="texto">
-            <strong>— Carlos, 29 anos • Personal trainer - Resultado em 23 dias: +R$680,00</strong>
-            <p>“Comecei com uma renda de R$1.500 e já estou ganhando o dobro com o que aprendi aqui.”</p>
-          </div>
-        </div>
-        <div class="coverflow__item">
-          <img src="fernando.png" alt="Fernando">
-          <div class="texto">
-            <strong>— Fernando, 35 anos • Motorista de aplicativo - Resultado em 18 dias: +R$420,00</strong>
-            <p>“Esse e-book deveria ser ensinado na escola.”</p>
-          </div>
-        </div>
-        <div class="coverflow__item">
-          <img src="joaopaulo.png" alt="João Paulo">
-          <div class="texto">
-            <strong>— João Paulo, 28 anos • Vendedor de bala - Resultado em 12 dias: +R$580,00</strong>
-            <p>“Comprei sem expectativa porque era barato, mas me surpreendeu. É muito bom.”</p>
-          </div>
-        </div>
-      </div>
-      <div class="coverflow-nav-container">
-        <button class="coverflow-nav prev" aria-label="Anterior">‹</button>
-        <button class="coverflow-nav next" aria-label="Próximo">›</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Por que este e-book é diferente? -->
-  <section class="section">
-    <h2>Por que este e-book é diferente?</h2>
-    <p>
-      Não é só um e-book... É um manual de guerra econômica para brasileiros reais que foram 
-      privados de educação financeira. Entenda o que os ricos já sabem — com linguagem simples 
-      e direta.
-    </p>
-  </section>
-
-  <!-- Para quem é -->
-  <section class="section alt">
-    <h2>Porque esse e-book é para você</h2>
-    <ul>
-      <li>✔ Se você é um empreendedor, mas não sabe por onde começar</li>
-      <li>✔ Já cansou de ficar com as contas zeradas</li>
-      <li>✔ Quer mudar de vida com o que tem</li>
-      <li>✔ Tem vontade de investir, mas não sabe por onde</li>
-    </ul>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section alt">
-    <h2>Perguntas Frequentes</h2>
-    <details><summary>Este e-book serve mesmo pra quem ganha pouco?</summary>
-      <p>Sim! Foi feito especialmente para quem vive com o orçamento apertado.</p>
-    </details>
-    <details><summary>Preciso investir dinheiro para aplicar o conteúdo?</summary>
-      <p>Não. As estratégias são pensadas para começar do zero.</p>
-    </details>
-    <details><summary>A linguagem é difícil?</summary>
-      <p>Não! É tudo explicado em linguagem simples, prática e aplicável.</p>
-    </details>
-    <details><summary>Funciona em celular?</summary>
-      <p>Sim! Pode ser lido em qualquer dispositivo.</p>
-    </details>
-    <details><summary>Como baixo?</summary>
-      <p>Você será direcionado para a página de download após o pagamento.</p>
-    </details>
-  </section>
-
-  <!-- Botão Flutuante com Timer -->
-  <div class="btn-download-wrapper">
-    <a href="como-ter-dinheiro.pdf" download class="btn-flutuante">
-      <div class="linha1">Mudar de vida agora</div>
-      <div class="linha2">
-        <span class="preco-destaque">R$23,97</span>
-        <span class="preco-riscado">R$47,94</span>
-      </div>
-    </a>
-    <div class="timer-baixo">
-      Oferta termina em: ⏰ <span id="timer">03:47</span>
-    </div>
-  </div>
-
-  <!-- Rodapé Institucional -->
-  <footer class="rodape-ravenna" id="rodape">
-    <div class="container-rodape">
-      <img src="RavennaBranco.png" alt="Logo Ravenna Agency" class="logo-footer">
-      <p><strong>Produzido por Ravenna Agency</strong> — a agência para microempresas</p>
-      <p class="slogan">Seu tempo e o seu faturamento são nossas prioridades.</p>
-      <p class="legais">
-        Todos os direitos reservados © 2025. 💬 WhatsApp (31) 98628-1133 — exclusivo para dúvidas sobre o conteúdo deste e-book.
-      </p>
-    </div>
-  </footer>
-
-  <!-- Script único consolidadо -->
-  <script>
-  (() => {
-    // 0) aplica blur ao fundo até aceitar cookies
-    document.body.classList.add('blurred');
-
-    // 1) referências aos elementos
-    const bgMusic      = document.getElementById('bg-music');
-    const tickSound    = document.getElementById('tick-sound');
-    const sectionSound = document.getElementById('section-sound');
-    const timerEl      = document.getElementById('timer');
-    const sections     = document.querySelectorAll('section.section, section.section.alt');
-    const btnWrapper   = document.querySelector('.btn-download-wrapper');
-    const seloUI       = document.querySelector('.selo-ravenna');
-    const elNoti       = document.getElementById('notificacaoCompra');
-    const cookieBanner = document.getElementById('cookie-banner');
-    const acceptBtn    = document.getElementById('accept-cookies');
-    const muteBtn      = document.getElementById('mute-btn');
-    const rodape       = document.getElementById('rodape');
-
-    // 2) banner de cookies: aceitar para iniciar bg-music e remover blur
-    acceptBtn.addEventListener('click', () => {
-      bgMusic.volume = 0.1;
-      bgMusic.play().catch(()=>{});
-      document.body.classList.remove('blurred');
-      cookieBanner.style.display = 'none';
-    });
-
-    // 3) botão de mute para bgMusic
-    muteBtn.addEventListener('click', () => {
-      bgMusic.muted = !bgMusic.muted;
-      muteBtn.textContent = bgMusic.muted ? '🔇' : '🔊';
-    });
-
-    // 4) timer com tick sonoro
-    let min = 3, sec = 47;
-    function atualizarTimer() {
-      if (sec === 0) {
-        if (min === 0) {
-          timerEl.textContent = "00:00";
-          bgMusic.pause();
-          return;
-        }
-        min--; sec = 59;
-      } else {
-        sec--;
-      }
-      tickSound.currentTime = 0;
-      tickSound.volume = 0.08;
-      tickSound.play().catch(()=>{});
-      timerEl.textContent = 
-        `${String(min).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
-      setTimeout(atualizarTimer, 1000);
-    }
-    atualizarTimer();
-
-    // 5) mensagens falsas de compra embaralhadas e aleatórias
-    const mensagens = [
-      "🔔 João Silva de São Paulo acabou de baixar!",
-      "🔔 Maria Oliveira de Belo Horizonte acabou de baixar!",
-      "🔔 Pedro Souza de Salvador acabou de baixar!"
-      // …outras mensagens…
-    ];
-    (function shuffle(arr) {
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-    })(mensagens);
-    let msgIndex = 0;
-    function mostrarMensagemAleatoria() {
-      elNoti.textContent = mensagens[msgIndex];
-      elNoti.style.opacity = '1';
-      setTimeout(() => { elNoti.style.opacity = '0'; }, 2000);
-      msgIndex = (msgIndex + 1) % mensagens.length;
-      const delay = Math.random() * 15000 + 5000;
-      setTimeout(mostrarMensagemAleatoria, delay);
-    }
-    mostrarMensagemAleatoria();
-
-    // 6) esconde botão de download ao chegar no rodapé
-    function verificarRodape() {
-      const r = rodape.getBoundingClientRect(), h = window.innerHeight;
-      if (r.top < h - btnWrapper.offsetHeight) {
-        btnWrapper.style.opacity = '0';
-        btnWrapper.style.pointerEvents = 'none';
-      } else {
-        btnWrapper.style.opacity = '1';
-        btnWrapper.style.pointerEvents = 'auto';
-      }
-    }
-    window.addEventListener('scroll', verificarRodape);
-    window.addEventListener('resize', verificarRodape);
-    document.addEventListener('DOMContentLoaded', verificarRodape);
-
-    // 7) blur/foco de seções com som ao mudar
-    let lastActive = null, uiTimer;
-    function onScroll() {
-      const midY = window.innerHeight / 2;
-      let closest = null, minDist = Infinity;
-      sections.forEach(sec => {
-        const r = sec.getBoundingClientRect();
-        const secMid = (r.top + r.bottom) / 2;
-        const dist = Math.abs(midY - secMid);
-        if (dist < minDist) { minDist = dist; closest = sec; }
-      });
-      if (closest && closest !== lastActive) {
-        sectionSound.currentTime = 0;
-        sectionSound.volume = 0.08;
-        sectionSound.play().catch(()=>{});
-        lastActive = closest;
-      }
-      sections.forEach(sec => 
-        sec.classList.toggle('active', sec === closest)
-      );
-      btnWrapper.classList.add('ui--blur');
-      seloUI.classList.add('ui--blur');
-      clearTimeout(uiTimer);
-      uiTimer = setTimeout(() => {
-        btnWrapper.classList.remove('ui--blur');
-        seloUI.classList.remove('ui--blur');
-      }, 2000);
-    }
-    window.addEventListener('scroll', onScroll);
-    window.addEventListener('resize', onScroll);
-    document.addEventListener('DOMContentLoaded', onScroll);
-
-    // 8) coverflow sem autoplay
-    (() => {
-      const inner = document.getElementById('coverflow-inner');
-      const items = inner.children;
-      const next  = document.querySelector('.coverflow-nav.next');
-      const prev  = document.querySelector('.coverflow-nav.prev');
-      const n     = items.length;
-      let index   = 0;
-      function rotate() {
-        const angle  = index * -(360 / n);
-        const radius = Math.round(
-          items[0].offsetWidth / (2 * Math.tan(Math.PI / n))
-        );
-        inner.style.transform = 
-          `translateZ(-${radius}px) rotateY(${angle}deg)`;
-      }
-      next.addEventListener('click', () => { index = (index+1)%n; rotate(); });
-      prev.addEventListener('click', () => { index = (index-1+n)%n; rotate(); });
-      rotate();
-    })();
-
-  })();
-  </script>
-</body>
+    </footer>
+    <script src="script.js" defer></script>
+  </body>
 </html>
