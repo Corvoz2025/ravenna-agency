@@ -25,9 +25,9 @@
     </div>
 
     <!-- Áudios -->
-    <audio id="bg-music" src="bg-music.mp3" loop preload="auto"></audio>
-    <audio id="tick-sound" src="tick.mp3" preload="auto"></audio>
-    <audio id="section-sound" src="section.mp3" preload="auto"></audio>
+    <audio id="bg-music" src="Sons/bg-music.mp3" loop preload="auto"></audio>
+    <audio id="tick-sound" src="Sons/tick.mp3" preload="auto"></audio>
+    <audio id="section-sound" src="Sons/section.mp3" preload="auto"></audio>
 
     <!-- Notificação de compra -->
     <div class="compra-fake" id="notificacaoCompra">
@@ -74,63 +74,96 @@
       <h2>O que você vai aprender</h2>
       <ul class="lista-com-imagens">
         <li>
-          <img src="imagens0.png" alt="Ícone: Pensar como rico" /> Pensar como
-          rico mesmo ganhando pouco
+          <img
+            src="Imagens do conteudo/imagens0.png"
+            alt="Ícone: Pensar como rico"
+          />
+          Pensar como rico mesmo ganhando pouco
         </li>
         <li>
-          <img src="imagens1.png" alt="Ícone: Renda extra" /> Estratégias reais
-          de renda extra
+          <img
+            src="Imagens do conteudo/imagens1.png"
+            alt="Ícone: Renda extra"
+          />
+          Estratégias reais de renda extra
         </li>
         <li>
-          <img src="imagens2.png" alt="Ícone: Inflação" /> Como fugir da
-          inflação e proteger seu dinheiro
+          <img src="Imagens do conteudo/imagens2.png" alt="Ícone: Inflação" />
+          Como fugir da inflação e proteger seu dinheiro
         </li>
         <li>
-          <img src="imagens3.png" alt="Ícone: Administra" /> Como administrar,
-          investir e acompanhar seus resultados
+          <img src="Imagens do conteudo/imagens3.png" alt="Ícone: Administra" />
+          Como administrar, investir e acompanhar seus resultados
         </li>
         <li>
-          <img src="imagens4.png" alt="Ícone: Gráficos" /> Entender tudo com
-          gráficos simples e diretos
+          <img src="Imagens do conteudo/imagens4.png" alt="Ícone: Gráficos" />
+          Entender tudo com gráficos simples e diretos
         </li>
       </ul>
     </section>
 
     <!-- Depoimentos Reais -->
-    <section id="testimonials-slider" class="slider">
+    <!-- Depoimentos Reais -->
+    <section id="testimonials-slider" class="testimonials">
       <h2>Depoimentos reais</h2>
-      <div class="slider-container">
+      <div class="slider">
         <!-- Item 1 -->
-        <div class="slider-item active">
-          <div class="testimonial-image">
-            <img src="joaopaulo.png" alt="Foto do João Silva" />
+        <div class="slide testimonial active">
+          <img
+            src="Foto dos depoimentos/joaopaulo.png"
+            alt="Foto do João Paulo"
+          />
+          <div class="content">
+            <p class="result">Resultado em 12 dias: +R$580,00</p>
+            <p class="text">
+              “Comprei sem expectativa porque era barato, mas me surpreendeu. É
+              muito bom!”
+            </p>
+            <p class="author">João Paulo, 28 anos • Vendedor de bala</p>
           </div>
-          <p class="testimonial-earning">Ganhou R$ 2.500 em 7 dias</p>
-          <p class="testimonial-name">João Paulo, São Paulo</p>
-          <p class="testimonial-text">
-            “Eu não acreditava que era possível, mas em uma semana já tinha
-            recuperado o investimento e dobrado meu lucro!”
-          </p>
         </div>
 
         <!-- Item 2 -->
-        <div class="slider-item">
-          <div class="testimonial-image">
-            <img src="imgs/maria.jpg" alt="Foto da Maria Oliveira" />
+        <div class="slide testimonial">
+          <img src="Foto dos depoimentos/juliana.png" alt="Foto da Juliana" />
+          <div class="content">
+            <p class="result">Resultado em 24 dias: +R$750,00</p>
+            <p class="text">
+              “O método é simples, direto ao ponto. Em menos de uma semana já vi
+              resultados incríveis.”
+            </p>
+            <p class="author">Juliana, 31 anos • Recepcionista</p>
           </div>
-          <p class="testimonial-earning">Ganhou R$ 1.800 em 5 dias</p>
-          <p class="testimonial-name">Maria Oliveira, Belo Horizonte</p>
-          <p class="testimonial-text">
-            “O método é simples, direto ao ponto. Em menos de uma semana já vi
-            resultados incríveis.”
-          </p>
         </div>
 
-        <!-- Adicione quantos depoimentos quiser seguindo o mesmo padrão -->
+        <!-- Item 3 -->
+        <div class="slide testimonial">
+          <img src="Foto dos depoimentos/carlos.png" alt="Foto do Carlos" />
+          <div class="content">
+            <p class="result">Resultado em 23 dias: +R$680,00</p>
+            <p class="text">
+              “Comecei com uma renda baixa e já estou ganhando com o que aprendi
+              aqui.”
+            </p>
+            <p class="author">Carlos, 29 anos • Personal trainer</p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="slide testimonial">
+          <img src="Foto dos depoimentos/fernando.png" alt="Foto do Fernando" />
+          <div class="content">
+            <p class="result">Resultado em 18 dias: +R$420,00</p>
+            <p class="text">“Esse e-book deveria ser ensinado na escola.”</p>
+            <p class="author">Fernando, Belo Horizonte</p>
+          </div>
+        </div>
       </div>
 
-      <button class="slider-nav prev">‹ Anterior</button>
-      <button class="slider-nav next">Próximo ›</button>
+      <div class="nav">
+        <button class="prev">‹ Anterior</button>
+        <button class="next">Próximo ›</button>
+      </div>
     </section>
 
     <!-- Por que este e-book é diferente? -->

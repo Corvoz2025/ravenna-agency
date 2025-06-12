@@ -600,83 +600,89 @@ details summary {
   }
 }
 
-/* ===== COVERFLOW 3D (roleta) ===== */
-/* --- Container geral --- */
-.slider {
+/* container geral */
+.testimonials {
   max-width: 600px;
-  margin: 2rem auto;
+  margin: 0 auto;
   text-align: center;
-}
-.slider h2 {
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
+  padding: 5rem 1rem;
 }
 
-/* --- Janela do slider --- */
-.slider-container {
+/* área deslizante */
+.slider {
   position: relative;
   overflow: hidden;
-  height: 320px; /* ajuste à sua necessidade */
+  height: 350px; /* ajuste se precisar */
 }
 
-/* --- Cada depoimento --- */
-.slider-item {
+/* cada slide empilhado */
+.slide {
   position: absolute;
   top: 0;
-  left: 100%;
+  left: 0;
   width: 100%;
   opacity: 0;
-  transition: all 0.5s ease;
+  transform: translateX(100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Depoimento visível */
-.slider-item.active {
-  left: 0;
+/* slide visível */
+.slide.active {
   opacity: 1;
+  transform: translateX(0);
 }
 
-/* Foto quadrada acima */
-.testimonial-image {
-  width: 120px;
-  height: 120px;
+/* foto quadrada, mas cortada em círculo */
+.slide img {
+  display: block;
   margin: 0 auto 1rem;
-  overflow: hidden;
-  border-radius: 8px;
-}
-.testimonial-image img {
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
+  border-radius: 50%;
 }
 
-/* Texto do depoimento */
-.testimonial-earning {
+/* estilo específico para o “print” (override para cantos arredondados leves) */
+.slide.screenshot img {
+  width: 200px; /* 👈 Aumenta na horizontal */
+  height: 350px; /* 👈 Aumenta na vertical */
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* texto do depoimento */
+.content .result {
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
-.testimonial-name {
-  font-style: italic;
+.content .text {
+  font-size: 0.95rem;
   margin-bottom: 0.5rem;
 }
-.testimonial-text {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  padding: 0 1rem;
+.content .author {
+  font-style: italic;
+  font-size: 0.9rem;
 }
 
-/* Botões de navegação */
-.slider-nav {
-  background: #ff7a00;
+/* botões de navegação */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+.nav button {
+  background: #ff6600;
   color: #fff;
   border: none;
-  padding: 0.6rem 1rem;
-  margin: 1rem 0.5rem 0;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 4px;
 }
-.slider-nav:disabled {
-  opacity: 0.5;
-  cursor: default;
+.nav button:hover {
+  opacity: 0.9;
 }
 
 /* ——— Banner de Cookies Centralizado com Blur no Fundo ——— */
@@ -732,4 +738,27 @@ body.blurred > :not(#cookie-banner) {
 /* Garantir que o botão de mute NUNCA seja desfocado */
 body.blurred > :not(#cookie-banner):not(#mute-btn) {
   filter: blur(4px);
+}
+
+/* Tela cheia do print */
+.print-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.print-fullscreen img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  object-fit: contain;
+  background: #fff;
 }

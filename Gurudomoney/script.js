@@ -159,35 +159,89 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   rotateCoverflow();
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const items = Array.from(document.querySelectorAll(".slider-item"));
-  const btnPrev = document.querySelector(".slider-nav.prev");
-  const btnNext = document.querySelector(".slider-nav.next");
-  let index = 0;
-  const total = items.length;
 
-  function updateSlider() {
-    items.forEach((item, i) => {
-      item.classList.toggle("active", i === index);
-    });
-    btnPrev.disabled = index === 0;
-    btnNext.disabled = index === total - 1;
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector("#testimonials-slider .slider");
+  if (!container) return;
+
+  const testimonialSlides = Array.from(
+    container.querySelectorAll(".slide.testimonial")
+  );
+
+  const printConfigs = [
+    { position: 1, src: "imagens/print1.png", alt: "Print depoimento 1" },
+    { position: 1, src: "imagens/print1a.png", alt: "Print extra 1" },
+    { position: 1, src: "imagens/print1b.png", alt: "Print extra 2" },
+    { position: 2, src: "imagens/print2.png", alt: "Print depoimento 2" },
+    { position: 3, src: "imagens/print3.png", alt: "Print depoimento 3" },
+    { position: 4, src: "imagens/print4.png", alt: "Print depoimento 4" },
+  ];
+
+  const finalSlides = [];
+  testimonialSlides.forEach((slide, idx) => {
+    finalSlides.push(slide);
+    printConfigs
+      .filter((cfg) => cfg.position === idx + 1)
+      .forEach((cfg) => {
+        const printSlide = document.createElement("div");
+        printSlide.classList.add("slide", "screenshot");
+        printSlide.innerHTML = `
+          <img src="${cfg.src}" alt="${cfg.alt}" />
+        `;
+        finalSlides.push(printSlide);
+      });
+  });
+
+  container.innerHTML = "";
+  finalSlides.forEach((sl) => container.appendChild(sl));
+
+  const slides = Array.from(container.children);
+  let index = 0;
+  const total = slides.length;
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  function updateSlides() {
+    slides.forEach((s, i) => s.classList.toggle("active", i === index));
   }
 
-  btnNext.addEventListener("click", () => {
-    if (index < total - 1) {
-      index++;
-      updateSlider();
-    }
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % total;
+    updateSlides();
+  });
+  prevBtn.addEventListener("click", () => {
+    index = (index - 1 + total) % total;
+    updateSlides();
   });
 
-  btnPrev.addEventListener("click", () => {
-    if (index > 0) {
-      index--;
-      updateSlider();
-    }
-  });
+  updateSlides();
+});
 
-  // Inicializa botões
-  updateSlider();
+document.addEventListener("click", function (e) {
+  const clickedPrint = e.target.closest(".slide.screenshot img");
+
+  // Clicou em um print
+  if (clickedPrint) {
+    // Cria a visualização em tela cheia
+    const overlay = document.createElement("div");
+    overlay.classList.add("print-fullscreen");
+
+    const img = document.createElement("img");
+    img.src = clickedPrint.src;
+    img.alt = clickedPrint.alt;
+
+    overlay.appendChild(img);
+    document.body.appendChild(overlay);
+
+    // Ao clicar na tela cheia, ela desaparece
+    overlay.addEventListener("click", () => {
+      overlay.remove();
+    });
+  }
+});
+
+// Se rolar a tela, fecha a visualização também
+window.addEventListener("scroll", function () {
+  const fs = document.querySelector(".print-fullscreen");
+  if (fs) fs.remove();
 });
