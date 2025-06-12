@@ -762,3 +762,43 @@ body.blurred > :not(#cookie-banner):not(#mute-btn) {
   object-fit: contain;
   background: #fff;
 }
+
+/* ==== Seção Investimento Diário ==== */
+.section.alt.investimento {
+  background: #fffae6;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.section.alt.investimento h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ff6600;
+}
+
+.section.alt.investimento p {
+  font-size: 1.1rem;
+  margin: 0 auto 1.5rem;
+  max-width: 700px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.section.alt.investimento .lista-com-imagens {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section.alt.investimento .lista-com-imagens li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.section.alt.investimento .lista-com-imagens li strong {
+  color: #ff6600;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
