@@ -3,40 +3,124 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E-BOOK EDUCAÇÃO FINANCEIRA</title>
+    <title>E-BOOK EDUCAÇÃO FINANCEIRA - Recupere seu Poder de Compra</title>
     <meta
       name="description"
       content="Descubra como aumentar sua renda mesmo em tempos de crise com o e-book 'GURU DO MONEY'. Estratégias reais e linguagem simples."
     />
+    <meta
+      name="keywords"
+      content="educação financeira, renda extra, investimentos, brasileiro, economia"
+    />
+    <meta name="author" content="Ravenna Agency" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="E-BOOK EDUCAÇÃO FINANCEIRA - Recupere seu Poder de Compra"
+    />
+    <meta
+      property="og:description"
+      content="Estratégias reais para aumentar sua renda em 7 dias"
+    />
+    <meta property="og:image" content="ebook.webp" />
+
+    <!-- Structured Data para SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Guru do Money - E-book Educação Financeira",
+        "description": "E-book com estratégias reais para aumentar renda e educação financeira",
+        "image": "ebook.webp",
+        "offers": {
+          "@type": "Offer",
+          "price": "23.97",
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.3",
+          "reviewCount": "57"
+        },
+        "brand": {
+          "@type": "Brand",
+          "name": "Ravenna Agency"
+        }
+      }
+    </script>
+
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="ebook.webp" as="image" />
+    <link rel="preload" href="Sons/bg-music.mp3" as="audio" />
   </head>
   <body>
     <!-- Botão Mute BG-Music -->
-    <button id="mute-btn" aria-label="Mudo/Não mudo música">🔊</button>
+    <button
+      id="mute-btn"
+      title="Alternar som da música de fundo"
+      aria-label="Ativar/desativar música de fundo"
+      aria-pressed="false"
+    >
+      🔊
+    </button>
+
+    <!-- Indicador de Status de Áudio -->
+    <div id="audio-status" class="audio-status">Carregando áudio...</div>
 
     <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner">
+    <div id="cookie-banner" class="cookie-banner" style="display: none">
       <p>Usamos cookies para melhorar sua experiência na página.</p>
       <button id="accept-cookies" class="cookie-btn">Aceitar cookies</button>
     </div>
 
-    <!-- Áudios -->
-    <audio id="bg-music" src="Sons/bg-music.mp3" loop preload="auto"></audio>
-    <audio id="tick-sound" src="Sons/tick.mp3" preload="auto"></audio>
-    <audio id="section-sound" src="Sons/section.mp3" preload="auto"></audio>
+    <!-- Áudios - Otimizado com carregamento sob demanda -->
+    <audio id="bg-music" preload="metadata" loop>
+      <source src="Sons/bg-music.mp3" type="audio/mpeg" />
+      <source src="Sons/bg-music.ogg" type="audio/ogg" />
+      <source src="Sons/bg-music.wav" type="audio/wav" />
+      Seu navegador não suporta áudio.
+    </audio>
+    <audio id="tick-sound" preload="none">
+      <source src="Sons/tick.mp3" type="audio/mpeg" />
+      <source src="Sons/tick.ogg" type="audio/ogg" />
+      <source src="Sons/tick.wav" type="audio/wav" />
+    </audio>
+    <audio id="section-sound" preload="none">
+      <source src="Sons/section.mp3" type="audio/mpeg" />
+      <source src="Sons/section.ogg" type="audio/ogg" />
+      <source src="Sons/section.wav" type="audio/wav" />
+    </audio>
 
     <!-- Notificação de compra -->
-    <div class="compra-fake" id="notificacaoCompra">
+    <div
+      class="compra-fake"
+      id="notificacaoCompra"
+      role="status"
+      aria-live="polite"
+    >
       🔔 Alguém acabou de baixar o e-book!
     </div>
 
     <!-- Selo Ravenna Agency fixo -->
-    <a href="https://ravenna.agency" class="selo-ravenna" target="_blank">
-      <img src="RavennaPreto.png" alt="Logo Ravenna Agency" />
+    <a
+      href="https://ravenna.agency"
+      class="selo-ravenna"
+      target="_blank"
+      rel="noopener"
+    >
+      <img
+        src="RavennaPreto.png"
+        alt="Logo Ravenna Agency - Agência para microempresas"
+      />
     </a>
 
     <!-- Hero Section -->
@@ -55,15 +139,24 @@
         <div class="image">
           <img
             src="ebook.webp"
-            alt="Capa do e-book Guru do Money com fundo laranja"
+            alt="Capa do e-book Guru do Money - Guia completo de educação financeira com fundo laranja"
+            loading="eager"
           />
-          <div class="avaliacao-estrelas">
+          <div
+            class="avaliacao-estrelas"
+            role="img"
+            aria-label="Avaliação 4.3 de 5 estrelas baseada em 57 avaliações"
+          >
             <div class="estrelas-base">
-              <div class="estrelas-preenchidas" style="width: 86%">
-                ★★★★★ 57 avaliações
+              <div
+                class="estrelas-preenchidas"
+                style="width: 86%"
+                aria-hidden="true"
+              >
+                ★★★★★
               </div>
             </div>
-            <span class="nota">4.3 / 5 57 avaliações</span>
+            <span class="nota">4.3 / 5 (57 avaliações)</span>
           </div>
         </div>
       </div>
@@ -71,69 +164,110 @@
 
     <!-- Seção: Invista menos de R$0,79 por dia -->
     <section class="section alt investimento">
-      <h2>
-        Invista menos de R$0,79 por dia uma unica vez e transforme sua vida este
-        mês
-      </h2>
-      <p>
-        Muitas vezes gastamos diariamente com itens supérfluos que não trazem
-        retorno real. Veja como um investimento de apenas
-        <strong>R$0,79 por dia</strong> é mais barato que:
-      </p>
-      <ul class="lista-com-imagens">
-        <li>
-          Netflix Padrão: R$ 44,90/mês → R$ 1,50 por dia
-          <strong>Economia de R$ 0,71 por dia</strong>
-        </li>
-        <li>
-          Spotify Premium (Individual): R$ 27,90/mês → R$ 0,93 por dia
-          <strong>Economia de R$ 0,14 por dia</strong>
-        </li>
-        <li>
-          Café expresso pequeno na padaria: R$ 3,00 o copo
-          <strong>Economia de R$ 2,21</strong> (por xícara)
-        </li>
-        <li>
-          Coxinha R$6,50: R$ 6,50 cada
-          <strong>Economia de R$ 5,71</strong> (por lanche)
-        </li>
-      </ul>
+      <div class="header-compacto">
+        <h2>
+          Invista menos de R$0,79 por dia uma única vez e transforme sua vida
+          este mês
+        </h2>
+        <p>
+          Muitas vezes gastamos diariamente com itens supérfluos que não trazem
+          retorno real. Veja como um investimento de apenas
+          <strong>R$0,79 por dia</strong> é mais barato que:
+        </p>
+      </div>
+      <div class="tabela-comparativa">
+        <table role="table" aria-label="Comparação de custos diários">
+          <caption class="sr-only">
+            Comparação do custo do e-book com gastos cotidianos
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Produto</th>
+              <th scope="col">Preço por dia</th>
+              <th scope="col">Economia ao escolher o e-book</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">
+                <span class="emoji" aria-hidden="true">🎬</span> Netflix Padrão
+              </th>
+              <td>R$ 1,50</td>
+              <td class="economia-valor">R$ 0,71</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <span class="emoji" aria-hidden="true">🎵</span> Spotify Premium
+              </th>
+              <td>R$ 0,93</td>
+              <td class="economia-valor">R$ 0,14</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <span class="emoji" aria-hidden="true">☕</span> Café expresso
+              </th>
+              <td>R$ 3,00</td>
+              <td class="economia-valor">R$ 2,21</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <span class="emoji" aria-hidden="true">🥟</span> Coxinha
+              </th>
+              <td>R$ 6,50</td>
+              <td class="economia-valor">R$ 5,71</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <!-- O que você vai aprender -->
-    <section class="section">
+    <section class="section section-aprender">
       <h2>O que você vai aprender</h2>
       <ul class="lista-com-imagens">
         <li>
           <img
             src="Imagens do conteudo/imagens0.png"
-            alt="Ícone: Pensar como rico"
+            alt="Ícone: Cérebro pensando - Mindset financeiro"
+            loading="lazy"
           />
-          Pensar como rico mesmo ganhando pouco
+          <span>Pensar como rico mesmo ganhando pouco</span>
         </li>
         <li>
           <img
             src="Imagens do conteudo/imagens1.png"
-            alt="Ícone: Renda extra"
+            alt="Ícone: Dinheiro crescendo - Renda extra"
+            loading="lazy"
           />
-          Estratégias reais de renda extra
+          <span>Estratégias reais de renda extra</span>
         </li>
         <li>
-          <img src="Imagens do conteudo/imagens2.png" alt="Ícone: Inflação" />
-          Como fugir da inflação e proteger seu dinheiro
+          <img
+            src="Imagens do conteudo/imagens2.png"
+            alt="Ícone: Escudo protetor - Proteção contra inflação"
+            loading="lazy"
+          />
+          <span>Como fugir da inflação e proteger seu dinheiro</span>
         </li>
         <li>
-          <img src="Imagens do conteudo/imagens3.png" alt="Ícone: Administra" />
-          Como administrar, investir e acompanhar seus resultados
+          <img
+            src="Imagens do conteudo/imagens3.png"
+            alt="Ícone: Calculadora e gráficos - Gestão financeira"
+            loading="lazy"
+          />
+          <span>Como administrar, investir e acompanhar seus resultados</span>
         </li>
         <li>
-          <img src="Imagens do conteudo/imagens4.png" alt="Ícone: Gráficos" />
-          Entender tudo com gráficos simples e diretos
+          <img
+            src="Imagens do conteudo/imagens4.png"
+            alt="Ícone: Gráficos didáticos - Aprendizado visual"
+            loading="lazy"
+          />
+          <span>Entender tudo com gráficos simples e diretos</span>
         </li>
       </ul>
     </section>
 
-    <!-- Depoimentos Reais -->
     <!-- Depoimentos Reais -->
     <section id="testimonials-slider" class="testimonials">
       <h2>Depoimentos reais</h2>
@@ -142,13 +276,14 @@
         <div class="slide testimonial active">
           <img
             src="Foto dos depoimentos/joaopaulo.png"
-            alt="Foto do João Paulo"
+            alt="Foto do João Paulo - cliente satisfeito"
+            loading="lazy"
           />
           <div class="content">
             <p class="result">Resultado em 12 dias: +R$580,00</p>
             <p class="text">
-              “Comprei sem expectativa porque era barato, mas me surpreendeu. É
-              muito bom!”
+              "Comprei sem expectativa porque era barato, mas me surpreendeu. É
+              muito bom!"
             </p>
             <p class="author">João Paulo, 28 anos • Vendedor de bala</p>
           </div>
@@ -156,12 +291,16 @@
 
         <!-- Item 2 -->
         <div class="slide testimonial">
-          <img src="Foto dos depoimentos/juliana.png" alt="Foto da Juliana" />
+          <img
+            src="Foto dos depoimentos/juliana.png"
+            alt="Foto da Juliana - cliente satisfeita"
+            loading="lazy"
+          />
           <div class="content">
             <p class="result">Resultado em 24 dias: +R$750,00</p>
             <p class="text">
-              “O método é simples, direto ao ponto. Em menos de uma semana já vi
-              resultados incríveis.”
+              "O método é simples, direto ao ponto. Em menos de uma semana já vi
+              resultados incríveis."
             </p>
             <p class="author">Juliana, 31 anos • Recepcionista</p>
           </div>
@@ -169,12 +308,16 @@
 
         <!-- Item 3 -->
         <div class="slide testimonial">
-          <img src="Foto dos depoimentos/carlos.png" alt="Foto do Carlos" />
+          <img
+            src="Foto dos depoimentos/carlos.png"
+            alt="Foto do Carlos - cliente satisfeito"
+            loading="lazy"
+          />
           <div class="content">
             <p class="result">Resultado em 23 dias: +R$680,00</p>
             <p class="text">
-              “Comecei com uma renda baixa e já estou ganhando com o que aprendi
-              aqui.”
+              "Comecei com uma renda baixa e já estou ganhando com o que aprendi
+              aqui."
             </p>
             <p class="author">Carlos, 29 anos • Personal trainer</p>
           </div>
@@ -182,18 +325,22 @@
 
         <!-- Item 4 -->
         <div class="slide testimonial">
-          <img src="Foto dos depoimentos/fernando.png" alt="Foto do Fernando" />
+          <img
+            src="Foto dos depoimentos/fernando.png"
+            alt="Foto do Fernando - cliente satisfeito"
+            loading="lazy"
+          />
           <div class="content">
             <p class="result">Resultado em 18 dias: +R$420,00</p>
-            <p class="text">“Esse e-book deveria ser ensinado na escola.”</p>
+            <p class="text">"Esse e-book deveria ser ensinado na escola."</p>
             <p class="author">Fernando, Belo Horizonte</p>
           </div>
         </div>
       </div>
 
       <div class="nav">
-        <button class="prev">‹ Anterior</button>
-        <button class="next">Próximo ›</button>
+        <button class="prev" aria-label="Depoimento anterior">Anterior</button>
+        <button class="next" aria-label="Próximo depoimento">Próximo</button>
       </div>
     </section>
 
@@ -245,15 +392,20 @@
       </details>
     </section>
 
-    <!-- Botão Flutuante com Timer -->
+    <!-- Botão Flutuante com Timer - CORRIGIDO -->
     <div class="btn-download-wrapper">
-      <a href="como-ter-dinheiro.pdf" download class="btn-flutuante">
+      <button
+        class="btn-flutuante"
+        onclick="RavennaEbookApp.handlePurchase()"
+        type="button"
+        aria-label="Comprar e-book por R$23,97"
+      >
         <div class="linha1">Mudar de vida agora</div>
         <div class="linha2">
           <span class="preco-destaque">R$23,97</span>
           <span class="preco-riscado">R$47,94</span>
         </div>
-      </a>
+      </button>
       <div class="timer-baixo">
         Oferta termina em: ⏰ <span id="timer">03:47</span>
       </div>
@@ -266,6 +418,7 @@
           src="RavennaBranco.png"
           alt="Logo Ravenna Agency"
           class="logo-footer"
+          loading="lazy"
         />
         <p>
           <strong>Produzido por Ravenna Agency</strong> — a agência para
@@ -280,6 +433,7 @@
         </p>
       </div>
     </footer>
+
     <script src="script.js" defer></script>
   </body>
 </html>
