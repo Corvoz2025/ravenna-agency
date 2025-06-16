@@ -2139,3 +2139,95 @@ details summary:focus:not(:focus-visible) {
 .mt-2 {
   margin-top: var(--spacing-lg);
 }
+/* ===== CORREÇÃO ESPECÍFICA PARA SEÇÃO INVESTIMENTO ===== */
+.section.alt.investimento {
+  background: var(--bg-gradient-vibrant);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  text-align: center;
+  border-radius: var(--border-radius-xl);
+  margin: 60px auto;
+  max-width: 900px;
+  color: var(--white);
+
+  /* CORREÇÃO: Remover flex para permitir fluxo normal do conteúdo */
+  display: block !important;
+
+  /* Garantir que todos os elementos filhos sejam visíveis */
+}
+
+.section.alt.investimento h2 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-lg);
+  color: var(--white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  display: block !important;
+  visibility: visible !important;
+}
+
+.section.alt.investimento p {
+  font-size: 1.2rem;
+  margin: 0 auto 2rem;
+  max-width: 700px;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  display: block !important;
+  visibility: visible !important;
+  line-height: 1.5;
+}
+
+/* Garantir que a tabela também seja visível */
+.section.alt.investimento .tabela-comparativa {
+  display: block !important;
+  visibility: visible !important;
+  margin: 2rem auto;
+}
+
+/* Estilo para o parágrafo final */
+.section.alt.investimento p[style*="margin-top"] {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 16px;
+  border-radius: var(--border-radius-lg);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-weight: 700;
+  font-size: 1.1em !important;
+  margin-top: 24px !important;
+}
+
+/* ===== OVERRIDE PARA MOBILE ===== */
+@media (max-width: 768px) {
+  .section.alt.investimento {
+    padding: 30px 20px;
+    margin: 20px 10px;
+    display: block !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .section.alt.investimento h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: 16px;
+  }
+
+  .section.alt.investimento p {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section.alt.investimento {
+    padding: 20px 15px;
+    margin: 15px 5px;
+    display: block !important;
+  }
+
+  .section.alt.investimento h2 {
+    font-size: var(--font-size-xl);
+    margin-bottom: 12px;
+  }
+
+  .section.alt.investimento p {
+    font-size: var(--font-size-sm);
+    margin-bottom: 12px;
+  }
+}
