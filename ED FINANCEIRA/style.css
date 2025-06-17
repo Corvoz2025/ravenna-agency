@@ -459,31 +459,6 @@ ul li {
   margin: 40px 0;
 }
 
-.section.alt.investimento {
-  background: var(--bg-gradient-vibrant);
-  padding: var(--spacing-xl) var(--spacing-lg);
-  text-align: center;
-  border-radius: var(--border-radius-xl);
-  margin: 60px auto;
-  max-width: 900px;
-  color: var(--white);
-}
-
-.section.alt.investimento h2 {
-  font-size: var(--font-size-3xl);
-  margin-bottom: var(--spacing-lg);
-  color: var(--white);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.section.alt.investimento p {
-  font-size: 1.2rem;
-  margin: 0 auto 2rem;
-  max-width: 700px;
-  color: rgba(255, 255, 255, 0.95);
-  font-weight: 500;
-}
-
 /* ===== TABELA COMPARATIVA ===== */
 .tabela-comparativa {
   max-width: 700px;
@@ -1314,22 +1289,6 @@ body.blurred > :not(#cookie-banner):not(#mute-btn) {
     font-size: var(--font-size-md);
   }
 
-  /* Seção Investimento Compacta */
-  .section.alt.investimento {
-    padding: 30px 20px;
-    margin: 20px 0;
-  }
-
-  .section.alt.investimento h2 {
-    font-size: var(--font-size-2xl);
-    margin-bottom: 16px;
-  }
-
-  .section.alt.investimento p {
-    font-size: 1rem;
-    margin-bottom: 16px;
-  }
-
   /* Lista de Aprendizado Compacta */
   .section-aprender {
     padding: 40px 20px;
@@ -1560,22 +1519,6 @@ body.blurred > :not(#cookie-banner):not(#mute-btn) {
 
   .prova-social .urgency-indicator .text {
     font-size: var(--font-size-sm);
-  }
-
-  /* Investimento Ultra Compacto */
-  .section.alt.investimento {
-    padding: 20px 15px;
-    margin: 15px 5px;
-  }
-
-  .section.alt.investimento h2 {
-    font-size: var(--font-size-xl);
-    margin-bottom: 12px;
-  }
-
-  .section.alt.investimento p {
-    font-size: var(--font-size-sm);
-    margin-bottom: 12px;
   }
 
   /* Lista Aprendizado Ultra Compacta */
@@ -1813,14 +1756,6 @@ body.blurred > :not(#cookie-banner):not(#mute-btn) {
     justify-content: center;
   }
 
-  /* Seção investimento em uma dobra */
-  .section.alt.investimento {
-    max-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
   /* Lista de aprendizado em uma dobra */
   .section-aprender {
     max-height: 100vh;
@@ -1851,7 +1786,6 @@ body.blurred > :not(#cookie-banner):not(#mute-btn) {
   .section,
   .hero,
   .prova-social,
-  .section.alt.investimento,
   .section-aprender,
   .para-quem-eh,
   .testimonials {
@@ -2139,95 +2073,318 @@ details summary:focus:not(:focus-visible) {
 .mt-2 {
   margin-top: var(--spacing-lg);
 }
-/* ===== CORREÇÃO ESPECÍFICA PARA SEÇÃO INVESTIMENTO ===== */
-.section.alt.investimento {
+/* ===== NOVA SEÇÃO INVESTIMENTO ===== */
+.nova-investimento {
   background: var(--bg-gradient-vibrant);
-  padding: var(--spacing-xl) var(--spacing-lg);
+  padding: 60px 20px;
   text-align: center;
   border-radius: var(--border-radius-xl);
   margin: 60px auto;
   max-width: 900px;
   color: var(--white);
-
-  /* CORREÇÃO: Remover flex para permitir fluxo normal do conteúdo */
-  display: block !important;
-
-  /* Garantir que todos os elementos filhos sejam visíveis */
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
 }
 
-.section.alt.investimento h2 {
+.nova-investimento::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.investimento-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.investimento-title {
   font-size: var(--font-size-3xl);
-  margin-bottom: var(--spacing-lg);
+  font-weight: 700;
+  margin-bottom: 24px;
   color: var(--white);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  display: block !important;
-  visibility: visible !important;
+  line-height: 1.2;
 }
 
-.section.alt.investimento p {
+.investimento-subtitle {
   font-size: 1.2rem;
-  margin: 0 auto 2rem;
+  margin: 0 auto 32px;
   max-width: 700px;
   color: rgba(255, 255, 255, 0.95);
   font-weight: 500;
-  display: block !important;
-  visibility: visible !important;
   line-height: 1.5;
 }
 
-/* Garantir que a tabela também seja visível */
-.section.alt.investimento .tabela-comparativa {
-  display: block !important;
-  visibility: visible !important;
-  margin: 2rem auto;
+.investimento-subtitle strong {
+  color: var(--white);
+  font-weight: 700;
 }
 
-/* Estilo para o parágrafo final */
-.section.alt.investimento p[style*="margin-top"] {
+/* ===== TABELA DE COMPARAÇÃO ===== */
+.comparacao-table-wrapper {
+  max-width: 700px;
+  margin: 0 auto 32px;
+  overflow-x: auto;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  background: var(--white);
+}
+
+.comparacao-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.comparacao-table th,
+.comparacao-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-300);
+  font-size: var(--font-size-md);
+}
+
+.comparacao-table thead th {
+  background: var(--primary-orange);
+  color: var(--white);
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.comparacao-table tbody tr {
+  background: var(--white);
+  color: var(--gray-700);
+  transition: background-color var(--transition-fast);
+}
+
+.comparacao-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.comparacao-table tbody tr:hover {
+  background: var(--bg-light-orange);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comparacao-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.comparacao-table .item-emoji {
+  font-size: 1.4em;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.comparacao-table .valor-economia {
+  color: var(--success-green);
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== DESTAQUE FINAL ===== */
+.investimento-destaque {
   background: rgba(255, 255, 255, 0.15);
-  padding: 16px;
+  padding: 20px 24px;
   border-radius: var(--border-radius-lg);
   border: 2px solid rgba(255, 255, 255, 0.3);
   font-weight: 700;
-  font-size: 1.1em !important;
-  margin-top: 24px !important;
+  font-size: 1.2em;
+  margin-top: 32px;
+  color: var(--white);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
-/* ===== OVERRIDE PARA MOBILE ===== */
+.investimento-destaque::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  border-radius: var(--border-radius-lg);
+  pointer-events: none;
+}
+
+/* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
-  .section.alt.investimento {
-    padding: 30px 20px;
-    margin: 20px 10px;
-    display: block !important;
-    max-height: none !important;
-    overflow: visible !important;
+  .nova-investimento {
+    padding: 40px 15px;
+    margin: 40px 10px;
   }
 
-  .section.alt.investimento h2 {
+  .investimento-title {
     font-size: var(--font-size-2xl);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 
-  .section.alt.investimento p {
+  .investimento-subtitle {
     font-size: 1rem;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
+  }
+
+  .comparacao-table th,
+  .comparacao-table td {
+    padding: 12px 16px;
+    font-size: var(--font-size-sm);
+  }
+
+  .comparacao-table thead th {
+    font-size: var(--font-size-md);
+  }
+
+  .comparacao-table .valor-economia {
+    font-size: var(--font-size-md);
+  }
+
+  .investimento-destaque {
+    font-size: 1rem;
+    padding: 16px 20px;
+    margin-top: 24px;
   }
 }
 
 @media (max-width: 480px) {
-  .section.alt.investimento {
-    padding: 20px 15px;
-    margin: 15px 5px;
-    display: block !important;
+  .nova-investimento {
+    padding: 30px 15px;
+    margin: 30px 5px;
   }
 
-  .section.alt.investimento h2 {
+  .investimento-title {
     font-size: var(--font-size-xl);
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
 
-  .section.alt.investimento p {
+  .investimento-subtitle {
     font-size: var(--font-size-sm);
-    margin-bottom: 12px;
+    margin-bottom: 20px;
+  }
+
+  .comparacao-table-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .comparacao-table th,
+  .comparacao-table td {
+    padding: 8px 12px;
+    font-size: var(--font-size-xs);
+  }
+
+  .comparacao-table thead th {
+    font-size: var(--font-size-sm);
+  }
+
+  .comparacao-table .item-emoji {
+    font-size: 1.2em;
+    margin-right: 8px;
+  }
+
+  .comparacao-table .valor-economia {
+    font-size: var(--font-size-sm);
+  }
+
+  .investimento-destaque {
+    font-size: var(--font-size-sm);
+    padding: 12px 16px;
+    margin-top: 20px;
+  }
+}
+
+/* ===== ANIMAÇÕES SUTIS ===== */
+.nova-investimento {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.comparacao-table tbody tr {
+  animation: slideIn 0.4s ease-out backwards;
+}
+
+.comparacao-table tbody tr:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.comparacao-table tbody tr:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.comparacao-table tbody tr:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.comparacao-table tbody tr:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== EFEITOS HOVER AVANÇADOS ===== */
+.investimento-destaque:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.comparacao-table-wrapper:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.3);
+}
+
+/* ===== ACESSIBILIDADE ===== */
+@media (prefers-reduced-motion: reduce) {
+  .nova-investimento,
+  .comparacao-table tbody tr,
+  .investimento-destaque,
+  .comparacao-table-wrapper {
+    animation: none;
+    transition: none;
+  }
+
+  .comparacao-table tbody tr:hover,
+  .investimento-destaque:hover,
+  .comparacao-table-wrapper:hover {
+    transform: none;
   }
 }
