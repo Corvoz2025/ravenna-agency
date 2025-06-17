@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
+    <link rel="preload" href="ebook.webp" as="image" />
+    <link rel="preload" href="Sons/bg-music.mp3" as="audio" />
+    <link rel="preload" href="Sons/tick.mp3" as="audio" />
+    <link rel="preload" href="Sons/section.mp3" as="audio" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -63,53 +67,6 @@
       rel="stylesheet"
     />
 
-    <!-- Preload de recursos críticos -->
-    <link rel="preload" href="ebook.webp" as="image" />
-    <link rel="preload" href="Sons/bg-music.mp3" as="audio" />
-  </head>
-  <body>
-    <!-- Botão Mute BG-Music -->
-    <button
-      id="mute-btn"
-      title="Alternar som da música de fundo"
-      aria-label="Ativar/desativar música de fundo"
-      aria-pressed="false"
-    >
-      🔊
-    </button>
-
-    <!-- Indicador de Status de Áudio -->
-    <div id="audio-status" class="audio-status">Carregando áudio...</div>
-
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner" style="display: none">
-      <p>
-        🍪 Este site usa cookies para melhorar sua experiência e mostrar o
-        conteúdo personalizado.
-      </p>
-      <button id="accept-cookies" class="cookie-btn">
-        Aceitar e Continuar
-      </button>
-    </div>
-
-    <!-- Áudios - Otimizado com carregamento sob demanda -->
-    <audio id="bg-music" preload="metadata" loop>
-      <source src="Sons/bg-music.mp3" type="audio/mpeg" />
-      <source src="Sons/bg-music.ogg" type="audio/ogg" />
-      <source src="Sons/bg-music.wav" type="audio/wav" />
-      Seu navegador não suporta áudio.
-    </audio>
-    <audio id="tick-sound" preload="none">
-      <source src="Sons/tick.mp3" type="audio/mpeg" />
-      <source src="Sons/tick.ogg" type="audio/ogg" />
-      <source src="Sons/tick.wav" type="audio/wav" />
-    </audio>
-    <audio id="section-sound" preload="none">
-      <source src="Sons/section.mp3" type="audio/mpeg" />
-      <source src="Sons/section.ogg" type="audio/ogg" />
-      <source src="Sons/section.wav" type="audio/wav" />
-    </audio>
-
     <!-- Notificação de compra -->
     <div
       class="compra-fake"
@@ -132,7 +89,56 @@
         alt="Logo Ravenna Agency - Agência para microempresas"
       />
     </a>
+<body>
+  <!-- Sistema de Áudio -->
+  <audio id="bg-music" preload="metadata" loop>
+    <source src="Sons/bg-music.mp3" type="audio/mpeg" />
+    <source src="Sons/bg-music.ogg" type="audio/ogg" />
+    <source src="Sons/bg-music.wav" type="audio/wav" />
+    Seu navegador não suporta áudio.
+  </audio>
+  <audio id="tick-sound" preload="metadata">
+    <source src="Sons/tick.mp3" type="audio/mpeg" />
+    <source src="Sons/tick.ogg" type="audio/ogg" />
+    <source src="Sons/tick.wav" type="audio/wav" />
+  </audio>
+  <audio id="section-sound" preload="metadata">
+    <source src="Sons/section.mp3" type="audio/mpeg" />
+    <source src="Sons/section.ogg" type="audio/ogg" />
+    <source src="Sons/section.wav" type="audio/wav" />
+  </audio>
 
+  <!-- Botão Mute Flutuante -->
+  <button
+    id="mute-btn"
+    class="mute-button"
+    title="Silenciar/Ativar música de fundo"
+    aria-label="Controlar áudio da página"
+    aria-pressed="false"
+  >
+    🔊
+  </button>
+
+  <!-- Banner de "Cookies" (na verdade para áudio) -->
+  <div id="audio-consent-banner" class="audio-consent-banner">
+    <div class="consent-content">
+      <h3>🍪</h3>
+      <p>
+        Este site usa cookies para melhorar sua experiência e mostrar o
+        conteúdo personalizado.
+      </p>
+      <div class="consent-buttons">
+        <button id="accept-audio" class="consent-btn accept">
+        Aceitar e Continuar
+        </button>
+        <button id="reject-audio" class="consent-btn reject">
+        não aceitar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resto do conteúdo existente... -->
     <!-- Hero Section OTIMIZADA -->
     <section class="hero">
       <div class="container">
