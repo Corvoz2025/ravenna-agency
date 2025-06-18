@@ -66,7 +66,9 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+  </head>
 
+  <body>
     <!-- Notificação de compra -->
     <div
       class="compra-fake"
@@ -89,56 +91,55 @@
         alt="Logo Ravenna Agency - Agência para microempresas"
       />
     </a>
-<body>
-  <!-- Sistema de Áudio -->
-  <audio id="bg-music" preload="metadata" loop>
-    <source src="Sons/bg-music.mp3" type="audio/mpeg" />
-    <source src="Sons/bg-music.ogg" type="audio/ogg" />
-    <source src="Sons/bg-music.wav" type="audio/wav" />
-    Seu navegador não suporta áudio.
-  </audio>
-  <audio id="tick-sound" preload="metadata">
-    <source src="Sons/tick.mp3" type="audio/mpeg" />
-    <source src="Sons/tick.ogg" type="audio/ogg" />
-    <source src="Sons/tick.wav" type="audio/wav" />
-  </audio>
-  <audio id="section-sound" preload="metadata">
-    <source src="Sons/section.mp3" type="audio/mpeg" />
-    <source src="Sons/section.ogg" type="audio/ogg" />
-    <source src="Sons/section.wav" type="audio/wav" />
-  </audio>
 
-  <!-- Botão Mute Flutuante -->
-  <button
-    id="mute-btn"
-    class="mute-button"
-    title="Silenciar/Ativar música de fundo"
-    aria-label="Controlar áudio da página"
-    aria-pressed="false"
-  >
-    🔊
-  </button>
+    <!-- Sistema de Áudio -->
+    <audio id="bg-music" preload="metadata" loop>
+      <source src="Sons/bg-music.mp3" type="audio/mpeg" />
+      <source src="Sons/bg-music.ogg" type="audio/ogg" />
+      <source src="Sons/bg-music.wav" type="audio/wav" />
+      Seu navegador não suporta áudio.
+    </audio>
+    <audio id="tick-sound" preload="metadata">
+      <source src="Sons/tick.mp3" type="audio/mpeg" />
+      <source src="Sons/tick.ogg" type="audio/ogg" />
+      <source src="Sons/tick.wav" type="audio/wav" />
+    </audio>
+    <audio id="section-sound" preload="metadata">
+      <source src="Sons/section.mp3" type="audio/mpeg" />
+      <source src="Sons/section.ogg" type="audio/ogg" />
+      <source src="Sons/section.wav" type="audio/wav" />
+    </audio>
 
-  <!-- Banner de "Cookies" (na verdade para áudio) -->
-  <div id="audio-consent-banner" class="audio-consent-banner">
-    <div class="consent-content">
-      <h3>🍪</h3>
-      <p>
-        Este site usa cookies para melhorar sua experiência e mostrar o
-        conteúdo personalizado.
-      </p>
-      <div class="consent-buttons">
-        <button id="accept-audio" class="consent-btn accept">
-        Aceitar e Continuar
-        </button>
-        <button id="reject-audio" class="consent-btn reject">
-        não aceitar
-        </button>
+    <!-- Botão Mute Flutuante -->
+    <button
+      id="mute-btn"
+      class="mute-button"
+      title="Silenciar/Ativar música de fundo"
+      aria-label="Controlar áudio da página"
+      aria-pressed="false"
+    >
+      🔊
+    </button>
+
+    <!-- Banner de "Cookies" (na verdade para áudio) -->
+    <div id="audio-consent-banner" class="audio-consent-banner">
+      <div class="consent-content">
+        <h3>🍪</h3>
+        <p>
+          Este site usa cookies para melhorar sua experiência e mostrar o
+          conteúdo personalizado.
+        </p>
+        <div class="consent-buttons">
+          <button id="accept-audio" class="consent-btn accept">
+            Aceitar e Continuar
+          </button>
+          <button id="reject-audio" class="consent-btn reject">
+            Não aceitar
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Resto do conteúdo existente... -->
     <!-- Hero Section OTIMIZADA -->
     <section class="hero">
       <div class="container">
@@ -383,14 +384,29 @@
       </div>
     </section>
 
-    <!-- Por que este e-book é diferente? -->
-    <section class="section">
-      <h2>Por que este e-book é diferente?</h2>
-      <p>
-        Não é só um e-book... É um manual de guerra econômica para brasileiros
-        reais que foram privados de educação financeira. Entenda o que os ricos
-        já sabem — com linguagem simples e direta.
-      </p>
+    <!-- Seção Diferencial Redesenhada -->
+    <section class="secao-diferencial">
+      <div class="diferencial-container">
+        <!-- Header da Seção -->
+        <div class="diferencial-header">
+          <span class="icone-destaque">🎯</span>
+          <h2>Porque este e-book é diferente?</h2>
+          <p class="subtitulo">
+            <strong>Não é só um e-book...</strong> É um manual de guerra
+            econômica para brasileiros reais que foram privados de educação
+            financeira. Entenda o que os ricos já sabem — com linguagem simples
+            e direta.
+          </p>
+        </div>
+
+        <!-- Call-out Final -->
+        <div class="diferencial-callout">
+          <div class="texto-destaque">
+            Este é o manual que deveria ter sido ensinado na escola, mas os
+            poderosos nunca quiseram que você soubesse!
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- NOVA Seção Para Quem É - Otimizada -->

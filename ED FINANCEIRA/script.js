@@ -368,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
     checkFooterVisibility();
   }
 
-  // ===== SLIDER DE DEPOIMENTOS =====
+  // ===== SLIDER DE DEPOIMENTOS CORRIGIDO =====
   function initTestimonialsSlider() {
     if (!elements.sliderContainer) return;
 
@@ -412,6 +412,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const finalSlides = [];
+    let printIndex = 0; // ADICIONADO: Contador para data-print-index
 
     testimonialSlides.forEach((slide, index) => {
       finalSlides.push(slide);
@@ -420,8 +421,15 @@ document.addEventListener("DOMContentLoaded", () => {
         .forEach((config) => {
           const printSlide = document.createElement("div");
           printSlide.classList.add("slide", "screenshot");
-          printSlide.innerHTML = `<img src="${config.src}" alt="${config.alt}" loading="lazy" />`;
+          // MODIFICADO: Nova estrutura HTML com indicador
+          printSlide.innerHTML = `
+            <div class="screenshot-container">
+              <div class="fullscreen-indicator" title="Clique para ver em tela cheia">⛶</div>
+              <img src="${config.src}" alt="${config.alt}" loading="lazy" data-print-index="${printIndex}" />
+            </div>
+          `;
           finalSlides.push(printSlide);
+          printIndex++; // ADICIONADO: Incrementar para próximo print
         });
     });
 
@@ -462,38 +470,160 @@ document.addEventListener("DOMContentLoaded", () => {
     updateSlides();
   }
 
-  // ===== VISUALIZAÇÃO EM TELA CHEIA =====
+  // ===== VISUALIZAÇÃO EM TELA CHEIA MELHORADA =====
   function initFullscreenViewer() {
+    let isFullscreenActive = false;
+    let currentPrintIndex = 0;
+
+    // Obter todas as imagens de prints
+    const printImages = Array.from(
+      document.querySelectorAll(".slide.screenshot img")
+    );
+
+    function createFullscreenOverlay(img, printIndex) {
+      const overlay = document.createElement("div");
+      overlay.classList.add("print-fullscreen");
+
+      const imgElement = document.createElement("img");
+      imgElement.src = img.src;
+      imgElement.alt = img.alt;
+      imgElement.loading = "eager";
+
+      // Botão de fechar
+      const closeBtn = document.createElement("button");
+      closeBtn.classList.add("fullscreen-close");
+      closeBtn.innerHTML = "✕";
+      closeBtn.title = "Fechar (ESC)";
+
+      // Botões de navegação
+      const prevBtn = document.createElement("button");
+      prevBtn.classList.add("fullscreen-nav", "prev");
+      prevBtn.innerHTML = "‹";
+      prevBtn.title = "Print anterior";
+
+      const nextBtn = document.createElement("button");
+      nextBtn.classList.add("fullscreen-nav", "next");
+      nextBtn.innerHTML = "›";
+      nextBtn.title = "Próximo print";
+
+      overlay.appendChild(imgElement);
+      overlay.appendChild(closeBtn);
+      overlay.appendChild(prevBtn);
+      overlay.appendChild(nextBtn);
+
+      // Função para atualizar imagem
+      function updateFullscreenImage() {
+        const currentImg = printImages[currentPrintIndex];
+        if (currentImg) {
+          imgElement.src = currentImg.src;
+          imgElement.alt = currentImg.alt;
+        }
+      }
+
+      // Navegação entre prints
+      function nextPrint() {
+        currentPrintIndex = (currentPrintIndex + 1) % printImages.length;
+        updateFullscreenImage();
+      }
+
+      function prevPrint() {
+        currentPrintIndex =
+          (currentPrintIndex - 1 + printImages.length) % printImages.length;
+        updateFullscreenImage();
+      }
+
+      // Event listeners
+      closeBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        closeFullscreen();
+      });
+
+      nextBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        nextPrint();
+      });
+
+      prevBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        prevPrint();
+      });
+
+      // Fechar ao clicar no fundo
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+          closeFullscreen();
+        }
+      });
+
+      // Navegação por teclado
+      function handleKeyboard(e) {
+        if (!isFullscreenActive) return;
+
+        switch (e.key) {
+          case "Escape":
+            closeFullscreen();
+            break;
+          case "ArrowRight":
+          case " ":
+            e.preventDefault();
+            nextPrint();
+            break;
+          case "ArrowLeft":
+            e.preventDefault();
+            prevPrint();
+            break;
+        }
+      }
+
+      function closeFullscreen() {
+        isFullscreenActive = false;
+        overlay.remove();
+        document.removeEventListener("keydown", handleKeyboard);
+        document.body.style.overflow = ""; // Restaurar scroll
+      }
+
+      // Definir index inicial e ativar sistema
+      currentPrintIndex = printIndex;
+      isFullscreenActive = true;
+      document.body.style.overflow = "hidden"; // Prevenir scroll do fundo
+      document.addEventListener("keydown", handleKeyboard);
+
+      return overlay;
+    }
+
+    // Event listener para clique nos prints
     document.addEventListener("click", (event) => {
       const clickedPrint = event.target.closest(".slide.screenshot img");
 
       if (clickedPrint) {
         event.preventDefault();
-        const overlay = document.createElement("div");
-        overlay.classList.add("print-fullscreen");
 
-        const img = document.createElement("img");
-        img.src = clickedPrint.src;
-        img.alt = clickedPrint.alt;
-        img.loading = "eager";
+        // Encontrar o índice do print clicado
+        const printIndex =
+          parseInt(clickedPrint.getAttribute("data-print-index")) ||
+          printImages.findIndex((img) => img.src === clickedPrint.src);
 
-        overlay.appendChild(img);
+        const overlay = createFullscreenOverlay(clickedPrint, printIndex);
         document.body.appendChild(overlay);
-
-        overlay.addEventListener("click", () => {
-          overlay.remove();
-        });
-
-        const handleEscape = (e) => {
-          if (e.key === "Escape") {
-            overlay.remove();
-            document.removeEventListener("keydown", handleEscape);
-          }
-        };
-
-        document.addEventListener("keydown", handleEscape);
       }
     });
+
+    // Event listener para clique no indicador
+    document.addEventListener("click", (event) => {
+      const clickedIndicator = event.target.closest(".fullscreen-indicator");
+
+      if (clickedIndicator) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const img = clickedIndicator.parentElement.querySelector("img");
+        if (img) {
+          img.click(); // Simular clique na imagem
+        }
+      }
+    });
+
+    console.log("✅ Sistema de tela cheia com navegação inicializado!");
   }
 
   // ===== INICIALIZAÇÃO =====
